@@ -19,7 +19,7 @@ Includes a PowerShell-based backend to set up folders, apply configurations, and
 
 - Windows 10 / 11
 - .NET Framework 4.7.2 or higher
-- Dead by Daylight installed via Steam
+- Dead by Daylight installed via Steam or Epic Games
 - ReShade-compatible GPU and drivers
 
 ---
