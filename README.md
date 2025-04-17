@@ -48,5 +48,5 @@ Open an issue or contact me directly.
 
 ## 📃 License
 
-This project is open-source under the GNU License 3.0 License.
+This project is open-source under the GNU License 3.0.
 
