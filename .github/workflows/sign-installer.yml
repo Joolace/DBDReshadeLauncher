@@ -27,5 +27,5 @@ jobs:
         api-token: ${{ secrets.SIGNPATH_API_TOKEN }}
         organization-id: e75d0231-1601-46d4-a447-a8853be541b3
         project-slug: DBDReshadeLauncher
-        signing-policy-slug: open-source
+        signing-policy-slug: Joolace
         artifact-path: path/to/output/DBDReshadeLauncherSetup.exe
