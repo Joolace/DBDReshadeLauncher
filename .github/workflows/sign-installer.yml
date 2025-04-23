@@ -1,29 +1,25 @@
-name: Build and Sign Installer
+name: Sign Setup with SignPath
 
 on:
-  push:
-    tags:
-      - 'v*'
+  workflow_dispatch:
 
 jobs:
-  build:
+  sign:
     runs-on: windows-latest
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-    - name: Install Inno Setup
-      run: |
-        choco install innosetup --yes
-        echo "Installed Inno Setup"
+      - name: Setup Inno Setup
+        run: choco install innosetup --yes
 
-    - name: Build installer
-      run: |
-        iscc path/to/your_script.iss
+      - name: Build Installer
+        run: iscc "DBDReshadeLauncherInstaller.iss"
 
-    - name: Upload unsigned installer to SignPath
-      uses: SignPath/github-action-signpath@v1
-      with:
+      - name: Upload and sign with SignPath
+        uses: SignPath/github-action@v0
+        with:
         api-token: ${{ secrets.SIGNPATH_API_TOKEN }}
         organization-id: e75d0231-1601-46d4-a447-a8853be541b3
         project-slug: DBDReshadeLauncher
