@@ -1,31 +1,29 @@
 name: Sign Setup with SignPath
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:  # Trigger manuale del workflow
 
 jobs:
   sign:
-    runs-on: windows-latest
+    runs-on: windows-latest  # Esegui il lavoro su un runner Windows
 
     steps:
-      # Checkout the repository
+      
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Install Inno Setup
+     
       - name: Install Inno Setup
         run: choco install innosetup --yes
 
-      # Build the installer with Inno Setup
-      - name: Build Installer
-        run: iscc "DBDReshadeLauncherInstaller.iss"
+     
+      - name: Build Installer with Inno Setup
+        run: iscc "DBDReshadeLauncherInstaller.iss"  
 
-      # Sign the installer with SignPath
-      - name: Sign the installer
-        uses: SignPath/github-action@v1
+      
+      - name: Sign the installer with SignPath
+        uses: signpath/signpath-github-action@v1
         with:
-          api-token: ${{ secrets.SIGNPATH_API_TOKEN }}
-          organization-id: 'e75d0231-1601-46d4-a447-a8853be541b3'
-          project-slug: 'DBDReshadeLauncher'
-          signing-policy-slug: 'Joolace'
-          artifact-path: 'Output\DBDReshadeLauncherSetup.exe'
+          api-token: ${{ secrets.SIGNPATH_API_TOKEN }}  
+          file: "Output\DBDReshadeLauncherSetup.exe"  # Il percorso del tuo file EXE da firmare
+          sign-type: "EV" 
