@@ -8,20 +8,24 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: Checkout repo
+      # Checkout the repository
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Inno Setup
+      # Install Inno Setup
+      - name: Install Inno Setup
         run: choco install innosetup --yes
 
+      # Build the installer with Inno Setup
       - name: Build Installer
         run: iscc "DBDReshadeLauncherInstaller.iss"
 
-      - name: Upload and sign with SignPath
-        uses: SignPath/github-action@v0
+      # Sign the installer with SignPath
+      - name: Sign the installer
+        uses: SignPath/github-action@v1
         with:
-        api-token: ${{ secrets.SIGNPATH_API_TOKEN }}
-        organization-id: e75d0231-1601-46d4-a447-a8853be541b3
-        project-slug: DBDReshadeLauncher
-        signing-policy-slug: Joolace
-        artifact-path: path/to/output/DBDReshadeLauncherSetup.exe
+          api-token: ${{ secrets.SIGNPATH_API_TOKEN }}
+          organization-id: 'e75d0231-1601-46d4-a447-a8853be541b3'
+          project-slug: 'DBDReshadeLauncher'
+          signing-policy-slug: 'Joolace'
+          artifact-path: 'Output\DBDReshadeLauncherSetup.exe'
