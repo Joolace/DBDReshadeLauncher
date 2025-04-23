@@ -25,5 +25,5 @@ jobs:
         uses: signpath/signpath-github-action@v1
         with:
           api-token: ${{ secrets.SIGNPATH_API_TOKEN }}  
-          file: "Output\DBDReshadeLauncherSetup.exe"  # Il percorso del tuo file EXE da firmare
+          file: "Output\DBDReshadeLauncherSetup.exe" 
           sign-type: "EV" 
