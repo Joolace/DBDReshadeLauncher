@@ -50,11 +50,11 @@
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.labelTitle.Location = new System.Drawing.Point(222, 184);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(352, 37);
+            this.labelTitle.Size = new System.Drawing.Size(320, 31);
             this.labelTitle.TabIndex = 1;
             this.labelTitle.Text = "DBDReshade Launcher";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -63,7 +63,7 @@
             // buttonRunScript
             // 
             this.buttonRunScript.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonRunScript.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRunScript.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRunScript.Location = new System.Drawing.Point(309, 242);
             this.buttonRunScript.Name = "buttonRunScript";
             this.buttonRunScript.Size = new System.Drawing.Size(177, 63);
@@ -75,12 +75,12 @@
             // labelDisclaimer
             // 
             this.labelDisclaimer.AutoSize = true;
-            this.labelDisclaimer.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDisclaimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDisclaimer.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.labelDisclaimer.Location = new System.Drawing.Point(58, 338);
             this.labelDisclaimer.MaximumSize = new System.Drawing.Size(700, 0);
             this.labelDisclaimer.Name = "labelDisclaimer";
-            this.labelDisclaimer.Size = new System.Drawing.Size(683, 60);
+            this.labelDisclaimer.Size = new System.Drawing.Size(692, 52);
             this.labelDisclaimer.TabIndex = 3;
             this.labelDisclaimer.Text = resources.GetString("labelDisclaimer.Text");
             this.labelDisclaimer.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -89,11 +89,11 @@
             // labelVersion
             // 
             this.labelVersion.AutoSize = true;
-            this.labelVersion.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelVersion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.labelVersion.Location = new System.Drawing.Point(289, 426);
             this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(233, 15);
+            this.labelVersion.Size = new System.Drawing.Size(219, 13);
             this.labelVersion.TabIndex = 4;
             this.labelVersion.Text = "Script version: 1.3.0 - Launcher version 1.0.0";
             this.labelVersion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -111,6 +111,7 @@
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.pictureBoxLogo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "GUI";
             this.Text = "DBD Launcher - 1.0.0";
             this.Load += new System.EventHandler(this.GUI_Load);
