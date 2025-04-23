@@ -25,7 +25,7 @@ jobs:
       uses: SignPath/github-action-signpath@v1
       with:
         api-token: ${{ secrets.SIGNPATH_API_TOKEN }}
-        organization-id: YOUR-ORG-ID
-        project-slug: YOUR-PROJECT-SLUG
+        organization-id: e75d0231-1601-46d4-a447-a8853be541b3
+        project-slug: DBDReshadeLauncher
         signing-policy-slug: open-source
         artifact-path: path/to/output/DBDReshadeLauncherSetup.exe
