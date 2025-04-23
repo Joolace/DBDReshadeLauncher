@@ -1,12 +1,12 @@
 [Setup]
 AppName=DBD Reshade Launcher
-AppVersion=1.0.0
+AppVersion=1.0.1
 AppPublisher=Joolace
 AppPublisherURL=https://github.com/Joolace
 DefaultDirName={autopf}\DBD Reshade Launcher
 DefaultGroupName=DBD Reshade Launcher
 OutputDir=Output
-OutputBaseFilename=DBDReshade_Launcher_Setup_v1.0.0
+OutputBaseFilename=DBDReshade_Launcher_Setup_v1.0.1
 Compression=lzma2/max
 SolidCompression=yes
 DisableProgramGroupPage=no
