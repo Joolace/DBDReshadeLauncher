@@ -22,7 +22,7 @@ namespace DBDReshadeLauncher
                 string error = process.StandardError.ReadToEnd();
                 process.WaitForExit();
 
-                return string.IsNullOrEmpty(error) ? output : $"Errore:\n{error}";
+                return string.IsNullOrEmpty(error) ? output : $"Error:\n{error}";
             }
         }
     }

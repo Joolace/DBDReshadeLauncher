@@ -56,7 +56,7 @@ namespace DBDReshadeLauncher
                 ";
 
                 string result = PowerShellHelper.EseguiScript(script);
-                MessageBox.Show(result, "Result Script", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show(result, "Result Script", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
