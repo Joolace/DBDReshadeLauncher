@@ -65,7 +65,7 @@
             // 
             this.buttonRunScript.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonRunScript.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRunScript.Location = new System.Drawing.Point(209, 242);
+            this.buttonRunScript.Location = new System.Drawing.Point(214, 242);
             this.buttonRunScript.Name = "buttonRunScript";
             this.buttonRunScript.Size = new System.Drawing.Size(177, 63);
             this.buttonRunScript.TabIndex = 2;
@@ -104,12 +104,13 @@
             // 
             this.D3DaylightButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.D3DaylightButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.D3DaylightButton.Location = new System.Drawing.Point(403, 242);
+            this.D3DaylightButton.Location = new System.Drawing.Point(410, 242);
             this.D3DaylightButton.Name = "D3DaylightButton";
             this.D3DaylightButton.Size = new System.Drawing.Size(177, 63);
             this.D3DaylightButton.TabIndex = 5;
             this.D3DaylightButton.Text = "D3Daylight";
             this.D3DaylightButton.UseVisualStyleBackColor = false;
+            this.D3DaylightButton.Click += new System.EventHandler(this.D3DaylightButton_Click);
             // 
             // GUI
             // 

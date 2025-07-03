@@ -13,7 +13,6 @@ namespace DBDReshadeLauncher
             InitializeComponent();
             labelTitle.Left = (this.ClientSize.Width - labelTitle.Width) / 2;
             pictureBoxLogo.Left = (this.ClientSize.Width - pictureBoxLogo.Width) / 2;
-            buttonRunScript.Left = (this.ClientSize.Width - buttonRunScript.Width) / 2;
             string imagePath = Path.Combine(Application.StartupPath, "Resources", "dbdreshade_logo.png");
             pictureBoxLogo.Image = Image.FromFile(imagePath);
             pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
@@ -68,7 +67,8 @@ namespace DBDReshadeLauncher
         {
             try
             {
-                string exePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "D3Daylight.exe");
+                // Full path to D3Daylight.exe inside the "D3Daylight" subfolder
+                string exePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "D3Daylight", "D3Daylight.exe");
 
                 if (File.Exists(exePath))
                 {
@@ -80,14 +80,14 @@ namespace DBDReshadeLauncher
                 }
                 else
                 {
-                    MessageBox.Show("File D3Daylight.exe file not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("D3Daylight.exe was not found in the 'D3Daylight' folder.", "File Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error during start-up:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("An error occurred while trying to launch D3Daylight.exe:\n" + ex.Message, "Launch Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+        } 
 
         private void GUI_Load(object sender, EventArgs e)
         {
