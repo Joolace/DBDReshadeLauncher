@@ -34,6 +34,7 @@
             this.buttonRunScript = new System.Windows.Forms.Button();
             this.labelDisclaimer = new System.Windows.Forms.Label();
             this.labelVersion = new System.Windows.Forms.Label();
+            this.D3DaylightButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +65,7 @@
             // 
             this.buttonRunScript.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonRunScript.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRunScript.Location = new System.Drawing.Point(309, 242);
+            this.buttonRunScript.Location = new System.Drawing.Point(209, 242);
             this.buttonRunScript.Name = "buttonRunScript";
             this.buttonRunScript.Size = new System.Drawing.Size(177, 63);
             this.buttonRunScript.TabIndex = 2;
@@ -91,13 +92,24 @@
             this.labelVersion.AutoSize = true;
             this.labelVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelVersion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelVersion.Location = new System.Drawing.Point(289, 426);
+            this.labelVersion.Location = new System.Drawing.Point(225, 428);
             this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(219, 13);
+            this.labelVersion.Size = new System.Drawing.Size(345, 13);
             this.labelVersion.TabIndex = 4;
-            this.labelVersion.Text = "Script version: 1.3.0 - Launcher version 1.0.0";
+            this.labelVersion.Text = "Script version: 1.3.1 - Launcher version 1.0.2 - D3Daylight Version 1.0.0";
             this.labelVersion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.labelVersion.Click += new System.EventHandler(this.labelVersion_Click);
+            // 
+            // D3DaylightButton
+            // 
+            this.D3DaylightButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.D3DaylightButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.D3DaylightButton.Location = new System.Drawing.Point(403, 242);
+            this.D3DaylightButton.Name = "D3DaylightButton";
+            this.D3DaylightButton.Size = new System.Drawing.Size(177, 63);
+            this.D3DaylightButton.TabIndex = 5;
+            this.D3DaylightButton.Text = "D3Daylight";
+            this.D3DaylightButton.UseVisualStyleBackColor = false;
             // 
             // GUI
             // 
@@ -105,6 +117,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.D3DaylightButton);
             this.Controls.Add(this.labelVersion);
             this.Controls.Add(this.labelDisclaimer);
             this.Controls.Add(this.buttonRunScript);
@@ -128,7 +141,7 @@
         private System.Windows.Forms.Button buttonRunScript;
         private System.Windows.Forms.Label labelDisclaimer;
         private System.Windows.Forms.Label labelVersion;
-
+        private System.Windows.Forms.Button D3DaylightButton;
     }
 }
 

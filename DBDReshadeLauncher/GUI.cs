@@ -64,6 +64,31 @@ namespace DBDReshadeLauncher
             }
         }
 
+        private void D3DaylightButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string exePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "D3Daylight.exe");
+
+                if (File.Exists(exePath))
+                {
+                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                    {
+                        FileName = exePath,
+                        UseShellExecute = true
+                    });
+                }
+                else
+                {
+                    MessageBox.Show("File D3Daylight.exe file not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error during start-up:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void GUI_Load(object sender, EventArgs e)
         {
 
