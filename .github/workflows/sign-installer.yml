@@ -1,0 +1,46 @@
+name: Sign Installer
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      # Check out the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Inno Setup
+      - name: Set up Inno Setup
+        uses: juv1l/innosetup-action@v1
+
+      # Build the installer
+      - name: Build the installer
+        run: |
+          iscc DBDReshadeLauncherInstaller.iss
+        working-directory: ./DBDReshadeLauncherInstaller
+
+      # Set up SignPath
+      - name: Set up SignPath
+        uses: SignPath/github-action@v1
+        with:
+          api-token: ${{ secrets.SIGNPATH_API_TOKEN }}
+
+      # Sign the installer
+      - name: Sign the installer
+        run: |
+          SignPath sign --file "Output\DBDReshadeLauncherSetup.exe" --api-token ${{ secrets.SIGNPATH_API_TOKEN }}
+
+      # Upload the signed installer as an artifact
+      - name: Upload signed installer as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: signed-installer
+          path: Output\DBDReshadeLauncherSetup.exe
