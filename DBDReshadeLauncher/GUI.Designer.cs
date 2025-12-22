@@ -96,7 +96,7 @@
             this.labelVersion.Name = "labelVersion";
             this.labelVersion.Size = new System.Drawing.Size(345, 13);
             this.labelVersion.TabIndex = 4;
-            this.labelVersion.Text = "Script version: 1.4.1 - Launcher version 1.0.2 - D3Daylight Version 1.0.0";
+            this.labelVersion.Text = "Script version: 1.4.2 - Launcher version 1.0.2 - D3Daylight Version 1.0.1";
             this.labelVersion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.labelVersion.Click += new System.EventHandler(this.labelVersion_Click);
             // 

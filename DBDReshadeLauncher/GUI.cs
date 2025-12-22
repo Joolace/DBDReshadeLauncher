@@ -2,6 +2,8 @@
 using System.IO;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Diagnostics;
+using System.Threading.Tasks;
 
 
 namespace DBDReshadeLauncher
@@ -41,25 +43,44 @@ namespace DBDReshadeLauncher
             
         }
 
-        private void buttonRunScript_Click(object sender, EventArgs e)
+        private async void buttonRunScript_Click(object sender, EventArgs e)
         {
             try
             {
                 string scriptFolder = Path.Combine(Application.StartupPath, "ScriptFolder");
-
                 string scriptPath = Path.Combine(scriptFolder, "dbdreshade.ps1");
 
-                string script = $@"
-                    Set-Location -Path '{scriptFolder}'
-                    .\dbdreshade.ps1
-                ";
+                if (!File.Exists(scriptPath))
+                {
+                    MessageBox.Show($"Script not found:\n{scriptPath}", "File Not Found",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
-                string result = PowerShellHelper.EseguiScript(script);
-                //MessageBox.Show(result, "Result Script", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                buttonRunScript.Enabled = false;
+
+                await Task.Run(() =>
+                {
+                    var psi = new ProcessStartInfo
+                    {
+                        FileName = "powershell.exe",
+                        Arguments =
+                            $"-NoProfile -ExecutionPolicy Bypass -File \"{scriptPath}\"",
+                        WorkingDirectory = scriptFolder,
+
+                        UseShellExecute = true
+                    };
+
+                    Process.Start(psi);
+                });
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error during script execution: " + ex.Message);
+            }
+            finally
+            {
+                buttonRunScript.Enabled = true;
             }
         }
 
